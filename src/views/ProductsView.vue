@@ -7,5 +7,5 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="flex text-center items-center mt-5">products</div>
+  <div class="min-h-screen w-full flex text-center mt-5">products</div>
 </template>
