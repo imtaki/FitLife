@@ -1,6 +1,6 @@
 <script lang="ts">
 import './assets/main.css';
-import NavBar from './components/NavBar.vue';
+import NavBar from './components/NavbarComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
 import { useDark } from '@vueuse/core';
 

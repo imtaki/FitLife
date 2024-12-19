@@ -1,0 +1,24 @@
+{
+    "products": [
+      {
+        "title": "Protein Powder",
+        "description": "High-quality protein to support muscle growth.",
+        "image": "/proteinpowder.png"
+      },
+      {
+        "title": "Pre-Workout",
+        "description": "Boost your energy and focus before workouts.",
+        "image": "/preworkout.png"
+      },
+      {
+        "title": "Vitamins",
+        "description": "Essential nutrients for daily wellness.",
+        "image": "/vitamins.png"
+      },
+      {
+        "title": "BCAA",
+        "description": "Boost your workout performance and recovery.",
+        "image": "/bcaa.png"
+      }
+    ]
+  }
