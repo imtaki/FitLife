@@ -1,31 +1,35 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useDark } from '@vueuse/core';
-import data from "@/products.json"
+import data from '@/products.json';
+import reviews from '@/reviews.json';
 import CardComponent from '@/components/CardComponent.vue';
+import TestimonialComponent from '@/components/TestimonialComponent.vue';
 
 export default defineComponent({
   name: 'HomeView',
   components: {
-    CardComponent
+    CardComponent,
+    TestimonialComponent,
   },
   setup() {
     const isDark = useDark({
-      storageKey: 'vueuse-dark-mode', 
-      value: true, 
-
+      storageKey: 'vueuse-dark-mode',
+      value: true,
     });
+
     const products = data.products;
     const limitedProducts = products.slice(0, 4);
+    const limitedTestimonial = reviews.slice(0, 3);
 
     return {
       isDark,
       limitedProducts,
+      limitedTestimonial
     };
   },
 });
 </script>
-
 <template>
   <main :class="isDark ? 'dark' : ''">
     <div class="container mx-auto min-h-screen">
@@ -65,11 +69,16 @@ export default defineComponent({
           />
         </div>
       </section>
-        <h1 class="flex flex-row text-5xl items-center font-semibold justify-center" :class="isDark ? 'bg-black text-white' : 'bg-white text-black'">
+
+      <section class="mb-20">
+        <h1
+          class="flex flex-row text-5xl items-center font-semibold justify-center mb-10"
+          :class="isDark ? 'bg-black text-white' : 'bg-white text-black'"
+        >
           Featured Products
         </h1>
         <div
-          class="grid max-w-screen-xl place-self-center mx-auto gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-10 mb-10"
+          class="grid max-w-screen-xl place-self-center mx-auto gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
         >
           <CardComponent
             v-for="(product, index) in limitedProducts"
@@ -80,7 +89,30 @@ export default defineComponent({
             :isDark="isDark"
           />
         </div>
+      </section>
 
+      <!-- Testimonials Section -->
+      <section class="mb-20 mt-20">
+        <h1
+          class="flex flex-row text-5xl items-center font-semibold justify-center mb-10"
+          :class="isDark ? 'bg-black text-white' : 'bg-white text-black'"
+        >
+          What Our Customers Say
+        </h1>
+        <div
+          class="grid max-w-screen-xl place-self-center mx-auto gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <TestimonialComponent
+            v-for="(testimonial, index) in limitedTestimonial"
+            :key="index"
+            :name="testimonial.name"
+            :message="testimonial.message"
+            :avatar="testimonial.avatar"
+            :location="testimonial.location"
+            :rating="testimonial.rating"
+          />
+        </div>
+      </section>
     </div>
   </main>
 </template>

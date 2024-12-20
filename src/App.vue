@@ -25,7 +25,7 @@ export default {
 <template>
   <div :class="isDark ? 'bg-black text-white' : 'bg-white text-black'" class="font-sans ">
     <NavBar />
-    <main class="mx-5 ">
+    <main class="mx-5">
       <RouterView />
     </main>
     <FooterComponent />

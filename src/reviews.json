@@ -1,0 +1,30 @@
+[
+  {
+    "name": "John Doe",
+    "message": "Amazing store! The products have been life-changing.",
+    "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+    "location": "New York, USA",
+    "rating": 5
+  },
+  {
+    "name": "Jane Smith",
+    "message": "Great customer service but shipping could've been faster.",
+    "avatar": "https://randomuser.me/api/portraits/women/2.jpg",
+    "location": "Los Angeles, USA",
+    "rating": 4
+  },
+  {
+    "name": "Alice Johnson",
+    "message": "High-quality supplements at reasonable prices. Highly recommend!",
+    "avatar": "https://randomuser.me/api/portraits/women/3.jpg",
+    "location": "London, UK",
+    "rating": 5
+  },
+  {
+    "name": "Mike Brown",
+    "message": "Best store for fitness enthusiasts. I've been a loyal customer for years!",
+    "avatar": "https://randomuser.me/api/portraits/men/4.jpg",
+    "location": "Toronto, Canada",
+    "rating": 4
+  }
+]
