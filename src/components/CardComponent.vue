@@ -32,7 +32,7 @@ export default defineComponent({
       <img
         :src="image"
         alt="Product Image"
-        class="w-full h-60 object-cover rounded-t-lg mb-4"
+        class="w-full object-cover rounded-t-lg mb-4"
       />
       <h3 class="text-2xl font-semibold mb-2">{{ title }}</h3>
       <p class="text-gray-600 dark:text-gray-400 mb-4">{{ description }}</p>

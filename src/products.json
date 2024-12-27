@@ -1,24 +1,132 @@
 {
-    "products": [
-      {
-        "title": "Protein Powder",
-        "description": "High-quality protein to support muscle growth.",
-        "image": "/proteinpowder.png"
-      },
-      {
-        "title": "Pre-Workout",
-        "description": "Boost your energy and focus before workouts.",
-        "image": "/preworkout.png"
-      },
-      {
-        "title": "Vitamins",
-        "description": "Essential nutrients for daily wellness.",
-        "image": "/vitamins.png"
-      },
-      {
-        "title": "BCAA",
-        "description": "Boost your workout performance and recovery.",
-        "image": "/bcaa.png"
-      }
-    ]
-  }
+  "products": [
+    {
+      "category": "Protein Powder",
+      "description": "High-quality protein to support muscle growth.",
+      "image": "/optimum-nutrition.png",
+      "items": [
+        {
+          "title": "Optimum Nutrition Gold Standard Whey",
+          "description": "The ultimate whey protein for strength and recovery after every workout.",
+          "image": "/optimum-nutrition.png"
+        },
+        {
+          "title": "Dymatize ISO100",
+          "description": "Quick-absorbing protein isolate for peak muscle performance.",
+          "image": "/iso100.png"
+        },
+        {
+          "title": "MuscleTech Nitro-Tech",
+          "description": "Packed with whey and creatine for enhanced muscle growth and recovery.",
+          "image": "/muscletech-nitrotech.png"
+        },
+        {
+          "title": "BSN Syntha-6",
+          "description": "A smooth, flavorful protein blend for all-day nourishment.",
+          "image": "/bsn-syntha6.png"
+        },
+        {
+          "title": "MyProtein Impact Whey",
+          "description": "Affordable and versatile protein for daily fitness enthusiasts.",
+          "image": "/myprotein-impact.png"
+        }
+      ]
+    },
+    {
+      "category": "Pre-Workout",
+      "description": "Boost your energy and focus before workouts.",
+      "image": "/preworkout.png",
+      "items": [
+        {
+          "title": "Cellucor C4 Original",
+          "description": "Ignite your energy and dominate your workouts with explosive power.",
+          "image": "/c4-original.png"
+        },
+        {
+          "title": "GAT Sport Nitraflex",
+          "description": "A high-octane formula designed to push your limits.",
+          "image": "/gat-nitraflex.png"
+        },
+        {
+          "title": "Alani Nu Pre-Workout",
+          "description": "Clean energy in exciting flavors for a perfect pre-workout boost.",
+          "image": "/alani-nu-preworkout.png"
+        },
+        {
+          "title": "Pre JYM",
+          "description": "Precision-engineered for energy, endurance, and peak performance.",
+          "image": "/pre-jym.png"
+        },
+        {
+          "title": "Total War",
+          "description": "For athletes who demand intensity and results every session.",
+          "image": "/total-war.png"
+        }
+      ]
+    },
+    {
+      "category": "Vitamins",
+      "description": "Essential nutrients for daily wellness.",
+      "image": "/vitamins.png",
+      "items": [
+        {
+          "title": "Optimum Nutrition Opti-Men",
+          "description": "Comprehensive support for active men's daily health.",
+          "image": "/opti-men.png"
+        },
+        {
+          "title": "Optimum Nutrition Opti-Women",
+          "description": "Tailored multivitamins for vibrant women on the go.",
+          "image": "/opti-women.png"
+        },
+        {
+          "title": "Vitamin D3 5000 IU",
+          "description": "Essential for strong bones and immunity in every season.",
+          "image": "/vitamin-d3.png"
+        },
+        {
+          "title": "Nature Made Multivitamin",
+          "description": "Reliable and complete nutrition for overall wellness.",
+          "image": "/nature-made-multivitamin.png"
+        },
+        {
+          "title": "Emergen-C Vitamin C Powder",
+          "description": "Instant immune-boosting power with a refreshing citrus taste.",
+          "image": "/emergen-c.png"
+        }
+      ]
+    },
+    {
+      "category": "BCAA",
+      "description": "Boost your workout performance and recovery.",
+      "image": "/bcaa.png",
+      "items": [
+        {
+          "title": "Scivation Xtend BCAA",
+          "description": "Hydrate and fuel your recovery during intense workouts.",
+          "image": "/scivation-xtend.png"
+        },
+        {
+          "title": "Evlution Nutrition BCAA5000",
+          "description": "Optimized for endurance and post-workout repair.",
+          "image": "/evlution-bcaa5000.png"
+        },
+        {
+          "title": "Optimum Nutrition Essential Amino Energy",
+          "description": "Boost energy and focus while aiding muscle recovery.",
+          "image": "/on-amino-energy.png"
+        },
+        {
+          "title": "MusclePharm BCAA 3:1:2",
+          "description": "A scientifically balanced blend for lean muscle growth.",
+          "image": "/musclepharm-bcaa.png"
+        },
+        {
+          "title": "Rule 1 R1 BCAA",
+          "description": "Pure recovery support for athletes who demand the best.",
+          "image": "/rule1-r1-bcaa.png"
+        }
+      ]
+    }
+  ]
+}
