@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import ProductsView from '@/views/ProductsView.vue'
 import ContactsView from '@/views/ContactView.vue'
 import CartView from '@/views/CartView.vue'
+import PreviewProduct from '@/components/PreviewProduct.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,8 +15,15 @@ const router = createRouter({
     },
     {
       path: '/products',
-      name: 'Produkty',
+      name: 'Products',
       component: ProductsView,
+    },
+    
+    {
+      path: '/products/:slug',
+      name: 'PreviewProduct',
+      component: PreviewProduct,
+      props: true,
     },
     {
       path: '/contact',

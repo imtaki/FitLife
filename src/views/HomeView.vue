@@ -87,6 +87,7 @@ export default defineComponent({
             :description="product.description"
             :image="product.image"
             :isDark="isDark"
+            buttonText="See More"
           />
         </div>
       </section>

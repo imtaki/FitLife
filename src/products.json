@@ -4,31 +4,67 @@
       "category": "Protein Powder",
       "description": "High-quality protein to support muscle growth.",
       "image": "/optimum-nutrition.png",
+      "slug": "protein-powder",
       "items": [
         {
+          "id": "1",
           "title": "Optimum Nutrition Gold Standard Whey",
           "description": "The ultimate whey protein for strength and recovery after every workout.",
-          "image": "/optimum-nutrition.png"
+          "longDescription": "Optimum Nutrition Gold Standard Whey provides 24g of premium protein per serving, helping you build and recover muscle efficiently. It's formulated with ultra-filtered whey protein isolates for a clean, fast-digesting protein option.",
+          "image": "/optimum-nutrition-c.png",
+          "slug": "optimum-nutrition-gold-standard-whey",
+          "price": 29.99,
+          "flavors": ["Vanilla", "Chocolate", "Cookies and Cream"],
+          "supplementFacts": [
+            { "nutrient": "Protein", "amount": "24g", "dailyValue": "48%" },
+            { "nutrient": "Carbohydrates", "amount": "3g", "dailyValue": "1%" },
+            { "nutrient": "Fat", "amount": "1.5g", "dailyValue": "2%" }
+          ]
         },
         {
+          "id": "2",
           "title": "Dymatize ISO100",
           "description": "Quick-absorbing protein isolate for peak muscle performance.",
-          "image": "/iso100.png"
+          "longDescription": "Dymatize ISO100 is a hydrolyzed whey protein isolate designed for fast absorption and ultimate muscle support. Perfect for post-workout recovery.",
+          "image": "/iso100.png",
+          "slug": "dymatize-iso100",
+          "price": 25.99,
+          "flavors": ["Chocolate", "Birthday Cake", "Fudge Brownie"],
+          "supplementFacts": [
+            { "nutrient": "Protein", "amount": "25g", "dailyValue": "50%" },
+            { "nutrient": "Carbohydrates", "amount": "1g", "dailyValue": "0%" },
+            { "nutrient": "Fat", "amount": "0g", "dailyValue": "0%" }
+          ]
         },
         {
+          "id": "3",
           "title": "MuscleTech Nitro-Tech",
           "description": "Packed with whey and creatine for enhanced muscle growth and recovery.",
-          "image": "/muscletech-nitrotech.png"
+          "longDescription": "MuscleTech Nitro-Tech combines high-quality whey protein with creatine for enhanced strength and muscle recovery, supporting lean muscle development.",
+          "image": "/muscletech.png",
+          "price": 45.99,
+          "slug": "muscletech-nitro-tech",
+          "flavors": ["Strawberry", "Chocolate", "Cookies and Cream"],
+          "supplementFacts": [
+            { "nutrient": "Protein", "amount": "30g", "dailyValue": "60%" },
+            { "nutrient": "Creatine", "amount": "3g", "dailyValue": "NA" },
+            { "nutrient": "Carbohydrates", "amount": "4g", "dailyValue": "2%" }
+          ]
         },
         {
+          "id": "4",
           "title": "BSN Syntha-6",
           "description": "A smooth, flavorful protein blend for all-day nourishment.",
-          "image": "/bsn-syntha6.png"
-        },
-        {
-          "title": "MyProtein Impact Whey",
-          "description": "Affordable and versatile protein for daily fitness enthusiasts.",
-          "image": "/myprotein-impact.png"
+          "longDescription": "BSN Syntha-6 is a protein blend with a creamy texture and mouthwatering flavors. It provides sustained release protein to support recovery and satiety.",
+          "image": "/syntha6.png",
+          "slug": "bsn-syntha-6",
+          "price": 30.99,
+          "flavors": ["Chocolate Peanut Butter", "Strawberry Milkshake", "Vanilla"],
+          "supplementFacts": [
+            { "nutrient": "Protein", "amount": "22g", "dailyValue": "44%" },
+            { "nutrient": "Carbohydrates", "amount": "15g", "dailyValue": "5%" },
+            { "nutrient": "Fat", "amount": "6g", "dailyValue": "8%" }
+          ]
         }
       ]
     },
@@ -36,31 +72,66 @@
       "category": "Pre-Workout",
       "description": "Boost your energy and focus before workouts.",
       "image": "/preworkout.png",
+      "slug": "pre-workout",
       "items": [
         {
+          "id": "5",
           "title": "Cellucor C4 Original",
           "description": "Ignite your energy and dominate your workouts with explosive power.",
-          "image": "/c4-original.png"
+          "longDescription": "Cellucor C4 Original pre-workout formula contains creatine, caffeine, and beta-alanine to supercharge your energy and performance levels.",
+          "image": "/c4-original.png",
+          "slug": "cellucor-c4-original",
+          "price": 35.64,
+          "flavors": ["Fruit Punch", "Blue Raspberry", "Watermelon"],
+          "supplementFacts": [
+            { "nutrient": "Caffeine", "amount": "150mg", "dailyValue": "38%" },
+            { "nutrient": "Beta-Alanine", "amount": "1.6g", "dailyValue": "NA" },
+            { "nutrient": "Creatine Nitrate", "amount": "1g", "dailyValue": "NA" }
+          ]
         },
         {
+          "id": "6",
           "title": "GAT Sport Nitraflex",
           "description": "A high-octane formula designed to push your limits.",
-          "image": "/gat-nitraflex.png"
+          "longDescription": "GAT Sport Nitraflex pre-workout is formulated to enhance focus, energy, and performance. It features clinically validated ingredients for strength and endurance.",
+          "image": "/gat_nitraflex.png",
+          "slug": "gat-sport-nitraflex",
+          "price": 29.99,
+          "flavors": ["Green Apple", "Pineapple", "Pink Lemonade"],
+          "supplementFacts": [
+            { "nutrient": "Caffeine", "amount": "325mg", "dailyValue": "81%" },
+            { "nutrient": "L-Citrulline", "amount": "1.5g", "dailyValue": "NA" },
+            { "nutrient": "Beta-Alanine", "amount": "1.6g", "dailyValue": "NA" }
+          ]
         },
         {
+          "id": "6",
           "title": "Alani Nu Pre-Workout",
           "description": "Clean energy in exciting flavors for a perfect pre-workout boost.",
-          "image": "/alani-nu-preworkout.png"
+          "longDescription": "Alani Nu Pre-workout is a hawaiian blend formulated to enhance focus, energy, and performance. It features clinically validated ingredients for strength and endurance.",
+          "image": "/alani-nu.png",
+          "slug": "alani-nu",
+          "price": 19.63,
+          "flavors": ["Green Apple", "Pineapple", "Pink Lemonade"],
+          "supplementFacts": [
+            { "nutrient": "Caffeine", "amount": "325mg", "dailyValue": "81%" },
+            { "nutrient": "L-Citrulline", "amount": "1.5g", "dailyValue": "NA" },
+            { "nutrient": "Beta-Alanine", "amount": "1.6g", "dailyValue": "NA" }
+          ]
         },
         {
-          "title": "Pre JYM",
-          "description": "Precision-engineered for energy, endurance, and peak performance.",
-          "image": "/pre-jym.png"
-        },
-        {
+          "id": "7",
           "title": "Total War",
-          "description": "For athletes who demand intensity and results every session.",
-          "image": "/total-war.png"
+          "description": "A high-octane formula designed to push your limits.",
+          "longDescription": "For athletes who demand intensity and results every session.",
+          "image": "/total-war.png",
+          "slug": "total-war",
+          "flavors": ["Green Apple", "Pineapple", "Pink Lemonade"],
+          "supplementFacts": [
+            { "nutrient": "Caffeine", "amount": "325mg", "dailyValue": "81%" },
+            { "nutrient": "L-Citrulline", "amount": "1.5g", "dailyValue": "NA" },
+            { "nutrient": "Beta-Alanine", "amount": "1.6g", "dailyValue": "NA" }
+          ]
         }
       ]
     },
@@ -68,31 +139,67 @@
       "category": "Vitamins",
       "description": "Essential nutrients for daily wellness.",
       "image": "/vitamins.png",
+      "slug": "vitamins",
       "items": [
         {
+          "id": "8",
           "title": "Optimum Nutrition Opti-Men",
           "description": "Comprehensive support for active men's daily health.",
-          "image": "/opti-men.png"
+          "longDescription": "Opti-Men is a high-potency multivitamin packed with over 75 active ingredients to support men's health, performance, and wellness.",
+          "image": "/optimen.png",
+          "slug": "optimum-nutrition-opti-men",
+          "price": 7.99,
+          "flavors": ["Unflavored"],
+          "supplementFacts": [
+            { "nutrient": "Vitamin C", "amount": "300mg", "dailyValue": "333%" },
+            { "nutrient": "Vitamin D", "amount": "100mcg", "dailyValue": "500%" },
+            { "nutrient": "Zinc", "amount": "30mg", "dailyValue": "273%" }
+          ]
         },
         {
+          "id": "9",
           "title": "Optimum Nutrition Opti-Women",
           "description": "Tailored multivitamins for vibrant women on the go.",
-          "image": "/opti-women.png"
+          "longDescription": "Opti-Women offers comprehensive multivitamin support for active women, featuring 23 vitamins and minerals tailored to women's health needs.",
+          "image": "/optiwomen.png",
+          "slug": "optimum-nutrition-opti-women",
+          "price": 7.99,
+          "flavors": ["Unflavored"],
+          "supplementFacts": [
+            { "nutrient": "Vitamin C", "amount": "250mg", "dailyValue": "278%" },
+            { "nutrient": "Iron", "amount": "18mg", "dailyValue": "100%" },
+            { "nutrient": "Calcium", "amount": "150mg", "dailyValue": "15%" }
+          ]
         },
         {
+          "id": "10",
           "title": "Vitamin D3 5000 IU",
           "description": "Essential for strong bones and immunity in every season.",
-          "image": "/vitamin-d3.png"
+          "longDescription": "Vitamin D3 5000 IU supports bone health, immune function, and muscle strength, especially during periods of limited sun exposure.",
+          "image": "/vitamin-d3.png",
+          "slug": "vitamin-d3-5000-iu",
+          "price": 10.00,
+          "flavors": ["Unflavored"],
+          "supplementFacts": [
+            { "nutrient": "Vitamin D3", "amount": "125mcg", "dailyValue": "625%" },
+            { "nutrient": "Calcium", "amount": "50mg", "dailyValue": "5%" },
+            { "nutrient": "Phosphorus", "amount": "38mg", "dailyValue": "3%" }
+          ]
         },
         {
-          "title": "Nature Made Multivitamin",
+          "id": "11",
+          "title": "Brain Market Multivitamin",
           "description": "Reliable and complete nutrition for overall wellness.",
-          "image": "/nature-made-multivitamin.png"
-        },
-        {
-          "title": "Emergen-C Vitamin C Powder",
-          "description": "Instant immune-boosting power with a refreshing citrus taste.",
-          "image": "/emergen-c.png"
+          "longDescription": "Brain Market Multivitamin offers an advanced blend of vitamins, minerals, and antioxidants to support mental clarity and overall wellness.",
+          "image": "/multivitamin.png",
+          "price": 11.12,
+          "slug": "brain-market-multivitamin",
+          "flavors": ["Unflavored"],
+          "supplementFacts": [
+            { "nutrient": "Vitamin E", "amount": "20mg", "dailyValue": "133%" },
+            { "nutrient": "Vitamin B12", "amount": "500mcg", "dailyValue": "20833%" },
+            { "nutrient": "Magnesium", "amount": "100mg", "dailyValue": "25%" }
+          ]
         }
       ]
     },
@@ -100,33 +207,70 @@
       "category": "BCAA",
       "description": "Boost your workout performance and recovery.",
       "image": "/bcaa.png",
+      "slug": "bcaa",
       "items": [
         {
+          "id": "12",
           "title": "Scivation Xtend BCAA",
           "description": "Hydrate and fuel your recovery during intense workouts.",
-          "image": "/scivation-xtend.png"
+          "longDescription": "Scivation Xtend is a trusted BCAA supplement featuring 7g of branched-chain amino acids per serving, ideal for endurance and muscle recovery.",
+          "image": "/scivation-xtend.png",
+          "slug": "scivation-xtend-bcaa",
+          "price": 13.60,
+          "flavors": ["Lemon Lime", "Mango", "Grape"],
+          "supplementFacts": [
+            { "nutrient": "BCAAs", "amount": "7g", "dailyValue": "NA" },
+            { "nutrient": "Electrolytes", "amount": "1170mg", "dailyValue": "NA" },
+            { "nutrient": "Glutamine", "amount": "2.5g", "dailyValue": "NA" }
+          ]
         },
         {
+          "id": "13",
           "title": "Evlution Nutrition BCAA5000",
           "description": "Optimized for endurance and post-workout repair.",
-          "image": "/evlution-bcaa5000.png"
+          "longDescription": "Evlution Nutrition BCAA5000 provides 5g of BCAAs in a 2:1:1 ratio to fuel recovery and support lean muscle growth.",
+          "image": "/evlution-bcaa5000.png",
+          "slug": "evlution-nutrition-bcaa5000",
+          "price": 20.00,
+          "flavors": ["Watermelon", "Blueberry Mojito", "Peach"],
+          "supplementFacts": [
+            { "nutrient": "BCAAs", "amount": "5g", "dailyValue": "NA" },
+            { "nutrient": "L-Leucine", "amount": "2.5g", "dailyValue": "NA" },
+            { "nutrient": "L-Isoleucine", "amount": "1.25g", "dailyValue": "NA" }
+          ]
         },
         {
+          "id": "14",
           "title": "Optimum Nutrition Essential Amino Energy",
           "description": "Boost energy and focus while aiding muscle recovery.",
-          "image": "/on-amino-energy.png"
+          "longDescription": "Optimum Nutrition Essential Amino Energy delivers a blend of amino acids and caffeine for energy, focus, and muscle recovery.",
+          "image": "/on-amino-energy.png",
+          "slug": "optimum-nutrition-essential-amino-energy",
+          "price": 12.40,
+          "flavors": ["Pineapple", "Strawberry Lime", "Mixed Berry"],
+          "supplementFacts": [
+            { "nutrient": "BCAAs", "amount": "5g", "dailyValue": "NA" },
+            { "nutrient": "Caffeine", "amount": "100mg", "dailyValue": "25%" },
+            { "nutrient": "Taurine", "amount": "500mg", "dailyValue": "NA" }
+          ]
         },
         {
-          "title": "MusclePharm BCAA 3:1:2",
+          "id": "15",
+          "title": "Nutrend BCAA 4:1:1",
           "description": "A scientifically balanced blend for lean muscle growth.",
-          "image": "/musclepharm-bcaa.png"
-        },
-        {
-          "title": "Rule 1 R1 BCAA",
-          "description": "Pure recovery support for athletes who demand the best.",
-          "image": "/rule1-r1-bcaa.png"
+          "longDescription": "Nutrend BCAA 4:1:1 features a leucine-rich formula designed for muscle repair and performance enhancement.",
+          "image": "/nutrend-bcaa.png",
+          "slug": "nutrend-bcaa-4-1-1",
+          "price": 12.53,
+          "flavors": ["Cola", "Orange", "Pineapple"],
+          "supplementFacts": [
+            { "nutrient": "BCAAs", "amount": "6g", "dailyValue": "NA" },
+            { "nutrient": "L-glutamine", "amount": "2713mg", "dailyValue": "NA" },
+            { "nutrient": "L-leutine", "amount": "4g", "dailyValue": "NA" }
+          ]
         }
       ]
     }
   ]
 }
+

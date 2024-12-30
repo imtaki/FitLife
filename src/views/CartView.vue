@@ -1,13 +1,19 @@
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'CartView',
-}
+  data() {
+  },
+});
 </script>
 
 <template>
-  <main>
-    <div class="min-h-screen w-full mt-5" >
-       Shopping cart
-    </div>
-  </main>
+ <div>cart items</div>
 </template>
+
+<style scoped>
+</style>
+
+
+
