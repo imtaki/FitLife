@@ -1,9 +1,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import data from '@/products.json';
+import { useCartStore } from '@/stores/cartStore';
 
 export default defineComponent({
   name: 'PreviewProduct',
+  computed: {
+    products() {
+      const cartStore = useCartStore();
+      return cartStore.getProducts;
+    }
+  },
   props: {
     slug: {
       type: String,
@@ -28,6 +35,10 @@ export default defineComponent({
     handleFlavorChange(event: Event) {
       this.selectedFlavor = (event.target as HTMLSelectElement).value;
     },
+    addToCart(product) {
+      const cartStore = useCartStore();
+      cartStore.addToCart(product);
+    }
   },
 });
 </script>
@@ -77,7 +88,7 @@ export default defineComponent({
           </table>
         </div>
         <button
-          @click="handleAddToCart()"
+          @click="addToCart(product)"
           class="bg-white text-black px-4 py-2 rounded-lg "
         >
           Add to Cart

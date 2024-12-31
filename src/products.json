@@ -126,6 +126,7 @@
           "longDescription": "For athletes who demand intensity and results every session.",
           "image": "/total-war.png",
           "slug": "total-war",
+          "price": 43.63,
           "flavors": ["Green Apple", "Pineapple", "Pink Lemonade"],
           "supplementFacts": [
             { "nutrient": "Caffeine", "amount": "325mg", "dailyValue": "81%" },

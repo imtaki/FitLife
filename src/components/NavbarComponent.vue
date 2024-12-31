@@ -2,6 +2,7 @@
 import { defineComponent } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { useDark } from '@vueuse/core';
+import { useCartStore } from '@/stores/cartStore';
 
 export default defineComponent({
   name: 'NavBar',
@@ -18,17 +19,23 @@ export default defineComponent({
       ],
     };
   },
+  computed: {
+    cartItemCount() {
+      const cartStore = useCartStore();
+      return cartStore.getCart.reduce((total, item) => total + item.quantity, 0);
+    }
+  },
   methods: {
     getLinkClass(to: string) {
-    if (this.$route.path === to) {
+      if (this.$route.path === to) {
+        return this.isDark
+          ? 'border-b-2 border-white pb-1'
+          : 'border-b-2 border-black pb-1';
+      }
       return this.isDark
-        ? 'border-b-2 border-white pb-1'
-        : 'border-b-2 border-black pb-1';
-    }
-    return this.isDark
-      ? 'text-white hover:text-gray-500'
-      : 'text-black hover:text-gray-700';
-  },
+        ? 'text-white hover:text-gray-500'
+        : 'text-black hover:text-gray-700';
+    },
     toggleDarkMode() {
       this.isDark = !this.isDark;
     },
@@ -53,7 +60,6 @@ export default defineComponent({
       class="relative p-4 w-full"
     >
       <div class="flex items-center justify-between">
-        <!-- Logo -->
         <div class="flex items-center">
           <FontAwesomeIcon class="text-3xl" :class="isDark ? 'text-white' : 'text-black'" :icon="['fas', 'dumbbell']" />
           <a
@@ -88,8 +94,12 @@ export default defineComponent({
           <a href="/login" class="px-3 py-1">
             <FontAwesomeIcon :icon="['fas', 'user']" :class="isDark ? 'text-white' : 'text-black'" />
           </a>
-          <a href="/cart" class="px-3 py-1">
+          <a href="/cart" class="px-3 py-1 relative">
             <FontAwesomeIcon :icon="['fas', 'cart-shopping']" :class="isDark ? 'text-white' : 'text-black'" />
+            <span v-if="cartItemCount >= 0" 
+              class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              {{ cartItemCount }}
+            </span>
           </a>
           <button
             @click="toggleDarkMode"
@@ -135,11 +145,15 @@ export default defineComponent({
           </a>
           <a href="/cart">
             <FontAwesomeIcon :icon="['fas', 'cart-shopping']" :class="isDark ? 'text-white' : 'text-black'" />
+            <span v-if="cartItemCount >= 0" 
+              class="absolute top-44 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              {{ cartItemCount }}
+            </span>
           </a>
           <button
             @click="toggleDarkMode"
             class=""
-            :class="isDark ? ' text-white' : 'text-black'"
+            :class="isDark ? 'text-white' : 'text-black'"
           >
             <FontAwesomeIcon :icon="isDark ? ['fas', 'sun'] : ['fas', 'moon']" />
           </button>
@@ -149,7 +163,7 @@ export default defineComponent({
   </header>
 </template>
 
-<style>
+<style scoped>
 </style>
 
 
