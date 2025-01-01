@@ -35,9 +35,14 @@ export default defineComponent({
     handleFlavorChange(event: Event) {
       this.selectedFlavor = (event.target as HTMLSelectElement).value;
     },
-    addToCart(product) {
+    addToCart(product: any) {
       const cartStore = useCartStore();
-      cartStore.addToCart(product);
+      const productWithFlavor = {
+        ...product,
+        flavor: this.selectedFlavor,
+      };
+      cartStore.addToCart(productWithFlavor);
+      console.log('Product added to cart:', productWithFlavor);
     }
   },
 });

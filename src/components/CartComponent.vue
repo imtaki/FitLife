@@ -20,10 +20,13 @@ export default defineComponent({
       const cartStore = useCartStore();
       cartStore.removeFromCart(productId);
     },
+    decreaseQuantity(productId: string) {
+      const cartStore = useCartStore();
+      cartStore.decreaseItemQuantity(productId);
+    },
   },
 });
 </script>
-
 <template>
   <div class="container mx-auto min-h-screen p-6">
     <h1 class="text-4xl font-semibold text-center mb-6">Your Cart</h1>
@@ -42,8 +45,8 @@ export default defineComponent({
           <div class="flex items-center">
             <img
               :src="item.image"
-              alt="Product Image"
-              class="w-16 h-16 object-cover rounded-lg shadow-lg"
+              alt="Product Image" 
+              class="w-32 h-32 object-cover rounded-lg shadow-lg"
             />
             <div class="ml-4">
               <h2 class="text-lg font-semibold">{{ item.title }}</h2>
@@ -52,12 +55,15 @@ export default defineComponent({
               <p class="text-sm">Quantity: {{ item.quantity }}</p>
             </div>
           </div>
+          <div class="flex gap-2">
           <button
             @click="removeFromCart(item.id)"
             class="bg-red-500 text-white px-4 py-2 rounded-lg"
           >
             Remove
           </button>
+          <button class="bg-orange-500 text-white px-4 py-2 rounded-lg" @click="decreaseQuantity(item.id)">-</button>
+        </div>
         </li>
       </ul>
 

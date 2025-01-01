@@ -5,6 +5,7 @@ type Product = {
   title: string;
   price: number;
   image: string;
+  flavor: string;
 };
 
 type CartItem = Product & {
@@ -44,6 +45,15 @@ export const useCartStore = defineStore('CartStore', {
       if (productIndex !== -1) {
         this.cart.splice(productIndex, 1);
         this.saveToLocalStorage();
+      }
+    },
+    decreaseItemQuantity(productId: string) {
+      const existingItem = this.cart.find((item) => item.id === productId);
+      if (existingItem) {
+          existingItem.quantity--;
+          if (existingItem.quantity === 0) {
+              this.removeFromCart(productId);
+          }
       }
     },
     saveToLocalStorage() {
