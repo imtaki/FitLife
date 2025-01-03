@@ -87,7 +87,7 @@ export default defineComponent({
             :description="product.description"
             :image="product.image"
             :isDark="isDark"
-            :slug="product.category.toLowerCase().replace(/\s+/g, '-')"
+            :slug="`category/${product.slug}`"
             buttonText="See More"
           />
         </div>

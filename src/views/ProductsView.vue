@@ -31,13 +31,14 @@ export default defineComponent({
     <h1 class="text-5xl font-semibold text-center my-10">All Products</h1>
     <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-10">
       <CardComponent
-        v-for="(item, index) in allItems"
-        :key="index"
+        v-for="item in allItems"
+        :key="item.id"
         :title="item.title"
         :description="item.description"
         :image="item.image"
-        :buttonText="'Preview'"
+        :isDark="isDark"
         :slug="item.slug"
+        buttonText="Preview"
       />
     </div>
   </main>
