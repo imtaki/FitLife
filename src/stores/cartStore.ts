@@ -6,6 +6,7 @@ type Product = {
   price: number;
   image: string;
   flavor: string;
+  quantity: number;
 };
 
 type CartItem = Product & {
@@ -32,20 +33,18 @@ export const useCartStore = defineStore('CartStore', {
 
   actions: {
     addToCart(product: Product) {
-        const existingProduct = this.cart.find((item) => item.id === product.id);
+        const existingProduct = this.cart.find((item) => item.id === product.id && item.flavor === product.flavor);
         if (existingProduct) {
-          existingProduct.quantity += 1;
+          existingProduct.quantity += product.quantity;
         } else {
-          this.cart.push({ ...product, quantity: 1 });
+          this.cart.push({ ...product});
         }
         this.saveToLocalStorage();
     },
     removeFromCart(productId: string) {
-      const productIndex = this.cart.findIndex((item) => item.id === productId);
-      if (productIndex !== -1) {
-        this.cart.splice(productIndex, 1);
-        this.saveToLocalStorage();
-      }
+      this.cart = this.cart.filter(item => item.id !== productId);
+      this.saveToLocalStorage();
+      
     },
     decreaseItemQuantity(productId: string) {
       const existingItem = this.cart.find((item) => item.id === productId);
@@ -53,6 +52,14 @@ export const useCartStore = defineStore('CartStore', {
           existingItem.quantity--;
           if (existingItem.quantity === 0) {
               this.removeFromCart(productId);
+          }
+      }
+    },
+    increaseItemQuantity(productId: string) {
+      const existingItem = this.cart.find((item) => item.id === productId);
+      if (existingItem) {
+          if (existingItem.quantity < 10) {
+              existingItem.quantity++;
           }
       }
     },

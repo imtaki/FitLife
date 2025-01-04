@@ -24,6 +24,10 @@ export default defineComponent({
       const cartStore = useCartStore();
       cartStore.decreaseItemQuantity(productId);
     },
+    increaseQuantity(productId: string) {
+      const cartStore = useCartStore();
+      cartStore.increaseItemQuantity(productId);
+    },
   },
 });
 </script>
@@ -55,7 +59,8 @@ export default defineComponent({
               <p class="text-sm">Quantity: {{ item.quantity }}</p>
             </div>
           </div>
-          <div class="flex gap-2">
+          <div class="flex gap-3">
+          <button class="bg-orange-500 text-white px-4 py-2 rounded-lg" @click="increaseQuantity(item.id)">+</button>
           <button
             @click="removeFromCart(item.id)"
             class="bg-red-500 text-white px-4 py-2 rounded-lg"

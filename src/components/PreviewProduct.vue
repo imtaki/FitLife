@@ -5,12 +5,6 @@ import { useCartStore } from '@/stores/cartStore';
 
 export default defineComponent({
   name: 'PreviewProduct',
-  computed: {
-    products() {
-      const cartStore = useCartStore();
-      return cartStore.getProducts;
-    }
-  },
   props: {
     slug: {
       type: String,
@@ -18,32 +12,45 @@ export default defineComponent({
     },
   },
   data() {
+    const quantity = 1;
+    const successMessage = false;
+    
     const allItems = data.products.flatMap((category) =>
       category.items.map((item) => ({
         ...item,
         category: category.category,
       }))
     );
-    
     const product = allItems.find((item) => item.slug === this.slug);
     return {
       product,
       selectedFlavor: product?.flavors?.[0] || '',
+      successMessage,
+      quantity,
     };
   },
   methods: {
-    handleFlavorChange(event: Event) {
-      this.selectedFlavor = (event.target as HTMLSelectElement).value;
-    },
     addToCart(product: any) {
       const cartStore = useCartStore();
-      const productWithFlavor = {
+      const productWithQuantityAndFlavor = {
         ...product,
         flavor: this.selectedFlavor,
+        quantity: this.quantity,
       };
-      cartStore.addToCart(productWithFlavor);
-      console.log('Product added to cart:', productWithFlavor);
-    }
+      cartStore.addToCart(productWithQuantityAndFlavor);
+      console.log('Product added to cart:', productWithQuantityAndFlavor);
+      this.successMessage = true;
+    },
+    increaseQuantity() {
+      if (this.quantity < 10) {
+      this.quantity++;
+      }
+    },
+    decreaseQuantity() {
+      if (this.quantity > 1) {
+        this.quantity--;
+      }
+    },
   },
 });
 </script>
@@ -66,7 +73,6 @@ export default defineComponent({
             id="flavor-selector"
             class="w-full border border-gray-300 dark:border-gray-600 rounded-lg p-2 dark:bg-gray-700 dark:text-gray-300"
             v-model="selectedFlavor"
-            @change="handleFlavorChange"
           >
             <option v-for="flavor in product.flavors" :key="flavor" :value="flavor">
               {{ flavor }}
@@ -92,12 +98,18 @@ export default defineComponent({
             </tbody>
           </table>
         </div>
+        <div class="flex gap-5">
+        <button @click="decreaseQuantity" class="bg-white text-black px-4 py-2">-</button>
+        <p class="border text-2xl border-zinc-700 px-4 py-2">{{ quantity }}</p>
+        <button @click="increaseQuantity" class="bg-white text-black px-4 py-2" >+</button>
         <button
           @click="addToCart(product)"
           class="bg-white text-black px-4 py-2 rounded-lg "
         >
           Add to Cart
         </button>
+        </div>
+        <div v-if="successMessage" class="text-emerald-400 mt-5 ">Product has been added to cart!</div>
       </div>
     </div>
   </div>
