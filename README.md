@@ -1,39 +1,74 @@
-# .
+# 🏋️ FitLife - Supplement Store
 
-This template should help get you started developing with Vue 3 in Vite.
+FitLife is a modern e-commerce web application for fitness supplements. With an intuitive UI, dark mode toggle, and seamless email integration, it provides an exceptional user experience for fitness enthusiasts.
 
-## Recommended IDE Setup
+## 🚀 Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Dynamic Cart Functionality**: Add, update, and remove items with real-time updates.
+- **EmailJS Integration**:  Seamlessly send emails directly from the application.
+- **Dark Mode Switch**: Toggle between light and dark modes with persistent settings.
+- **Responsive Design**: Built for all screen sizes using Tailwind CSS.
+- **Modern UI/UX**: Clean and user-friendly interface.
+- **State Management**: Efficient state handling with Vue's Composition API and Pinia.
 
-## Type Support for `.vue` Imports in TS
+## 🛠️ Tech Stack
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Frontend**: Vue.js 3, TypeScript, Vite
+- **Styling**: TailWindCSS
+- **Email**: EmailJS
+- **Dark Mode**: @vueuse/core's useDark utility
+- **State Management**: Pinia
 
-## Customize configuration
+## Installation
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/imtaki/FitLife.git
+   ```
 
-## Project Setup
+2. Navigate to the project folder:
+   ```bash
+   cd FitLife
+   ```
 
-```sh
-npm install
+3. Install dependencies:
+   ```bash
+   npm i 
+   ```
+## Running the Application
+
+1. Navigate to the root folder (`FitLife`).
+2. Start the site using:
+   ```bash
+   npm run dev
+   ```
+3. Open your browser and visit `http://localhost:5173` to view the application.
+
+## 📂 Folder Structure
+
+```plaintext
+FitLife/
+├── src/               # Source code
+│   ├── assets/        # Static assets
+│   ├── components/    # Vue components
+│   ├── pages/         # Page views
+│   ├── stores/        # Pinia stores
+│   ├── types/         # TypeScript Types
+│   ├── views/         # Vue Views
+│   ├── App.vue        # Main App component
+│   └── main.ts        # Entry point
+├── public/            # Public assets
+├── .env               # Environment variables
+├── vite.config.ts     # Vite configuration
+├── package.json       # Project metadata and dependencies
+└── README.md          # Project documentation
 ```
 
-### Compile and Hot-Reload for Development
+## Scripts:
+  - `npm run dev`: Starts the  development server.
+  - `npm run build`: Builds the production-ready app.
+  - `npm run preview`: Preview the production build..
 
-```sh
-npm run dev
-```
+---
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Enjoy browsing supplements with **FitLife**! 💪
