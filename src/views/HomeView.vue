@@ -35,7 +35,7 @@ export default defineComponent({
     <div class="container mx-auto min-h-screen">
       <section
         :class="isDark ? 'bg-black text-white' : 'bg-white text-black'"
-        class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 mb-12"
+        class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 mt-40 mb-48"
       >
         <div class="mr-auto place-self-center lg:col-span-7">
           <h1
@@ -70,7 +70,7 @@ export default defineComponent({
         </div>
       </section>
 
-      <section class="mb-20">
+      <section class="mb-32">
         <h1
           class="flex flex-row text-5xl items-center font-semibold justify-center mb-10"
           :class="isDark ? 'bg-black text-white' : 'bg-white text-black'"
@@ -93,7 +93,7 @@ export default defineComponent({
         </div>
       </section>
 
-      <section class="mb-20 mt-20">
+      <section class="mb-20 mt-32">
         <h1
           class="flex flex-row text-5xl items-center font-semibold justify-center mb-10"
           :class="isDark ? 'bg-black text-white' : 'bg-white text-black'"

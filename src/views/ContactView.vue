@@ -1,24 +1,53 @@
 <script lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import emailjs from '@emailjs/browser';
-
+interface ContactForm {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  successMessage: boolean;
+}
+interface SocialLink {
+  href: string;
+  icon: string[];
+  ariaLabel: string;
+}
 export default {
   name: 'ContactView',
   components: {
     FontAwesomeIcon,
   },
-  data () {
+  data(): ContactForm & { socialLinks: SocialLink[] } {
     return {
+      socialLinks: [
+        {
+          href: 'https://www.linkedin.com/in/dominik-takáč-542666322/',
+          icon: ['fab', 'linkedin'],
+          ariaLabel: 'LinkedIn',
+        },
+        {
+          href: 'mailto:dominik.takac1337@gmail.com',
+          icon: ['fas', 'envelope'],
+          ariaLabel: 'Email',
+        },
+        {
+          href: 'https://www.github.com/imtaki',
+          icon: ['fab', 'square-github'],
+          ariaLabel: 'GitHub',
+        },
+      ],
       name: '',
       email: '',
       subject: '',
       message: '',
+      successMessage: false,
     }
   },
   methods: {
     sendEmail(e: Event) {
       try {
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID', {
+        emailjs.sendForm('service_2tqg50d', 'template_jcniw7m', e.target, 'VuBqKM2ImAYO_2t3x', {
           name: this.name,
           email: this.email,
           subject: this.subject,
@@ -32,6 +61,8 @@ export default {
       this.email = '';
       this.subject = '';
       this.message = '';
+      this.successMessage = true;
+
     },
   }
 
@@ -50,35 +81,22 @@ export default {
           </p>
           <div class="flex gap-7 justify-center md:justify-start">
             <a
-              href="https://www.linkedin.com/in/dominik-takáč-542666322/"
+              v-for="link in socialLinks"
+              :key="link.href"
+              :href="link.href"
               target="_blank"
               rel="noreferrer"
+              :aria-label="link.ariaLabel"
               class="w-12 h-12 flex items-center justify-center rounded-full hover:scale-105 transition-transform"
             >
-            <FontAwesomeIcon class="text-5xl" :icon="['fab', 'linkedin']" />
-           </a>
-           <a
-              href="mailto:dominik.takac1337@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-              class="w-12 h-12 flex items-center justify-center rounded-full hover:scale-105 transition-transform"
-            >
-            <FontAwesomeIcon class="text-5xl" :icon="['fas', 'envelope']" />
-           </a>
-           <a
-              href="https://www.github.com/imtaki"
-              target="_blank"
-              rel="noreferrer"
-              class="w-12 h-12 flex items-center justify-center rounded-full hover:scale-105 transition-transform"
-            >
-            <FontAwesomeIcon class="text-5xl" :icon="['fab', 'square-github']" />
-           </a>
+              <FontAwesomeIcon class="text-5xl" :icon="link.icon" />
+            </a>
           </div>
         </div>
-          <div class="md:w-1/2 p-8">
-          <form v-on:submit="sendEmail">
+          <div class="md:w-1/2 p-8 ">
+          <form @submit.prevent="sendEmail">
             <div class="mb-6">
-              <label htmlFor="name" class="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="name" class="block text-sm font-medium  text-gray-700 mb-2">
                 Your Name
               </label>
               <input
@@ -86,7 +104,7 @@ export default {
                 id="name"
                 v-model="name"
                 name="name"
-                class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                class="w-full p-3 border bg-gray-300 border-gray-300 text-black rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="Your Name"
                 required
               />
@@ -100,7 +118,7 @@ export default {
                 id="email"
                 v-model="email"
                 name="email"
-                class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                class="w-full p-3 border bg-gray-300 border-gray-300 rounded-lg text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="Your Email"
                 required
               />
@@ -114,7 +132,7 @@ export default {
                 id="subject"
                 v-model="subject"
                 name="subject"
-                class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                class="w-full p-3 border border-gray-300 bg-gray-300 rounded-lg shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="Subject"
                 required
               />
@@ -128,17 +146,18 @@ export default {
                 name="message"
                 v-model="message"
                 rows="5"
-                class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                class="w-full p-3 border border-gray-300 bg-gray-300 rounded-lg shadow-sm text-black focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="Write your message here..."
                 required
               ></textarea>
             </div>
             <button
               type="submit"
-              class="w-full py-3 px-6 border-black bg-white text-black font-semibold rounded-lg shadow-md hover:scale-105 transition-transform"
+              class="w-full py-3 px-6 border-black  bg-gray-300 text-black font-semibold rounded-lg shadow-md hover:scale-105 transition-transform"
             >
             Send Message
             </button>
+            <div v-if="successMessage" class="text-green-500 mt-4">Email sent succesfully!</div>
           </form>
         </div>
       </div>

@@ -4,12 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { useDark } from '@vueuse/core';
 import { useCartStore } from '@/stores/cartStore';
 
+interface NavLink {
+  name: string;
+  path: string;
+  icon: string[];
+}
 export default defineComponent({
   name: 'NavBar',
   components: {
     FontAwesomeIcon,
   },
-  data() {
+  data(): { navLinks: NavLink[] } {
     return {
       mobileMenuToggle: false,
       navLinks: [

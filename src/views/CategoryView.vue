@@ -4,7 +4,13 @@ import { useDark } from '@vueuse/core';
 import { useRoute } from 'vue-router';
 import data from '@/products.json';
 import CardComponent from '@/components/CardComponent.vue';
-
+interface CategoryItem {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  slug: string;
+}
 export default defineComponent({
   name: 'CategoryView',
   components: {
@@ -14,7 +20,7 @@ export default defineComponent({
     const isDark = useDark();
     const route = useRoute();
     const category = data.products.find(p => p.slug === route.params.slug);
-    const items = category ? category.items : [];
+    const items: CategoryItem[] = category ? category.items : [];
 
     return {
       isDark,

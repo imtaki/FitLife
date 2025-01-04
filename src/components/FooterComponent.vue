@@ -2,9 +2,13 @@
 import { defineComponent } from 'vue';
 import { useDark } from '@vueuse/core';
 
+interface  FooterLink {
+  name: string;
+  path: string;
+}
 export default defineComponent({
   name: 'FooterComponent',
-  data() {
+  data(): { footerLinks: FooterLink[] } {
     return {
       footerLinks: [
         { name: 'About Us', path: '/aboutus' },

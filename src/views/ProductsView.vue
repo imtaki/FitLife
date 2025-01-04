@@ -3,6 +3,15 @@ import { defineComponent } from 'vue';
 import data from '@/products.json';
 import CardComponent from '@/components/CardComponent.vue';
 
+interface ProductItem {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  category: string;
+  slug: string;
+  image: string;
+}
 export default defineComponent({
   name: 'ProductsView',
   components: {
@@ -10,7 +19,7 @@ export default defineComponent({
   },
   setup() {
     const products = data.products;
-    const allItems = products.flatMap(category =>
+    const allItems: ProductItem[] = products.flatMap(category =>
       category.items.map(item => ({
         ...item,
         category: category.category,
@@ -36,7 +45,6 @@ export default defineComponent({
         :title="item.title"
         :description="item.description"
         :image="item.image"
-        :isDark="isDark"
         :slug="item.slug"
         buttonText="Preview"
       />

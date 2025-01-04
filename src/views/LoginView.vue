@@ -3,6 +3,10 @@ import { defineComponent } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { useDark } from '@vueuse/core';
 
+interface LoginForm {
+  email: string;
+  password: string;
+}
 export default defineComponent({
   name: 'LoginView',
   components: {
@@ -18,7 +22,7 @@ export default defineComponent({
       isDark,
     };
   },
-  data() {
+  data(): LoginForm {
     return {
       email: '',
       password: '',
