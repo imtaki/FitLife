@@ -47,12 +47,7 @@ export default {
   methods: {
     sendEmail(e: Event) {
       try {
-        emailjs.sendForm('service_2tqg50d', 'template_jcniw7m', e.target, 'VuBqKM2ImAYO_2t3x', {
-          name: this.name,
-          email: this.email,
-          subject: this.subject,
-          message: this.message,
-        })
+        emailjs.sendForm('service_2tqg50d', 'template_jcniw7m', e.target as HTMLFormElement, 'VuBqKM2ImAYO_2t3x')
       } catch (error) {
         console.log(error);
         throw error;

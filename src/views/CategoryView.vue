@@ -5,7 +5,7 @@ import { useRoute } from 'vue-router';
 import data from '@/products.json';
 import CardComponent from '@/components/CardComponent.vue';
 interface CategoryItem {
-  id: number;
+  id: string;
   title: string;
   description: string;
   image: string;

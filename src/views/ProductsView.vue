@@ -4,7 +4,7 @@ import data from '@/products.json';
 import CardComponent from '@/components/CardComponent.vue';
 
 interface ProductItem {
-  id: number;
+  id: string;
   title: string;
   description: string;
   price: number;
@@ -40,6 +40,7 @@ export default defineComponent({
     <h1 class="text-5xl font-semibold text-center my-10">All Products</h1>
     <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-10">
       <CardComponent
+        class="h-full flex flex-col"
         v-for="item in allItems"
         :key="item.id"
         :title="item.title"

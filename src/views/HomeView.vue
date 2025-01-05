@@ -37,7 +37,7 @@ export default defineComponent({
         :class="isDark ? 'bg-black text-white' : 'bg-white text-black'"
         class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 mt-40 mb-48"
       >
-        <div class="mr-auto place-self-center lg:col-span-7">
+      <div class="mr-auto place-self-center lg:col-span-7 text-center lg:text-left">
           <h1
             class="max-w-2xl mb-4 text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl"
             :class="isDark ? ' text-white' : ' text-black'"
@@ -49,7 +49,7 @@ export default defineComponent({
           </p>
           <a
             :class="isDark ? 'bg-white text-black' : 'bg-black text-white'"
-            class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center rounded-lg hover:bg-gray-700 transition duration-300 sm:text-center sm:justify-center"
+            class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center rounded-lg hover:bg-gray-700 transition duration-300 sm:text-center sm:items-center sm:justify-center"
           >
             Shop Now
           </a>
