@@ -41,17 +41,17 @@ export const useCartStore = defineStore('CartStore', {
         }
         this.saveToLocalStorage();
     },
-    removeFromCart(productId: string) {
-      this.cart = this.cart.filter(item => item.id !== productId);
+    removeFromCart(productId: string, flavor: string) {
+      this.cart = this.cart.filter(item => !(item.id === productId && item.flavor === flavor));
       this.saveToLocalStorage();
       
     },
-    decreaseItemQuantity(productId: string) {
+    decreaseItemQuantity(productId: string, flavor: string) {
       const existingItem = this.cart.find((item) => item.id === productId);
       if (existingItem) {
           existingItem.quantity--;
           if (existingItem.quantity === 0) {
-              this.removeFromCart(productId);
+              this.removeFromCart(productId, flavor);
           }
       }
     },

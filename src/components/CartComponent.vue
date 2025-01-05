@@ -16,13 +16,13 @@ export default defineComponent({
     },
   },
   methods: {
-    removeFromCart(productId: string) {
+    removeFromCart(productId: string, flavor: string) {
       const cartStore = useCartStore();
-      cartStore.removeFromCart(productId);
+      cartStore.removeFromCart(productId, flavor);
     },
-    decreaseQuantity(productId: string) {
+    decreaseQuantity(productId: string, flavor: string) {
       const cartStore = useCartStore();
-      cartStore.decreaseItemQuantity(productId);
+      cartStore.decreaseItemQuantity(productId, flavor);
     },
     increaseQuantity(productId: string) {
       const cartStore = useCartStore();
@@ -44,7 +44,7 @@ export default defineComponent({
         <li
           v-for="item in cart"
           :key="item.id"
-          class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-4"
+          class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6"
         >
           <div class="flex flex-col sm:flex-row items-start sm:items-center w-full">
             <img
@@ -68,14 +68,14 @@ export default defineComponent({
               +
             </button>
             <button
-              @click="removeFromCart(item.id)"
+              @click="removeFromCart(item.id, item.flavor)"
               class="bg-red-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base"
             >
               Remove
             </button>
             <button 
               class="bg-orange-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base" 
-              @click="decreaseQuantity(item.id)"
+              @click="decreaseQuantity(item.id, item.flavor)"
             >
               -
             </button>
