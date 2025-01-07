@@ -9,7 +9,7 @@ FitLife is a modern e-commerce web application for fitness supplements. With an 
 - **Dark Mode Switch**: Toggle between light and dark modes with persistent settings.
 - **Responsive Design**: Built for all screen sizes using Tailwind CSS.
 - **Modern UI/UX**: Clean and user-friendly interface.
-- **State Management**: Efficient state handling with Vue's Composition API and Pinia.
+- **State Management**: Efficient state handling with Vue's Options API and Pinia.
 
 ## 🛠️ Tech Stack
 
@@ -58,7 +58,6 @@ FitLife/
 │   ├── App.vue        # Main App component
 │   └── main.ts        # Entry point
 ├── public/            # Public assets
-├── .env               # Environment variables
 ├── vite.config.ts     # Vite configuration
 ├── package.json       # Project metadata and dependencies
 └── README.md          # Project documentation
