@@ -12,18 +12,13 @@ export default defineComponent({
     CardComponent,
     TestimonialComponent,
   },
-  setup() {
-    const isDark = useDark({
-      storageKey: 'vueuse-dark-mode',
-      value: true,
-    });
-
+  data() {
     const products = data.products;
     const limitedProducts = products.slice(0, 4);
     const limitedTestimonial = reviews.slice(0, 3);
 
     return {
-      isDark,
+      isDark: useDark({ storageKey: 'vueuse-dark-mode' }),
       limitedProducts,
       limitedTestimonial
     };
@@ -129,7 +124,7 @@ export default defineComponent({
                             <input class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500" placeholder="Enter your email" type="email" id="email">
                         </div>
                         <div>
-                            <button type="submit" class="py-3 px-5 w-full text-sm bg-white font-medium text-center text-white bgrounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-black">Subscribe</button>
+                            <button type="submit" class="py-3 px-5 w-full text-sm bg-black font-medium text-center text-white bgrounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 ">Subscribe</button>
                         </div>
                     </div>
                     <div class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer">We care about the protection of your data. <a href="#" class="font-medium text-primary-600 hover:underline">Read our Privacy Policy</a>.</div>

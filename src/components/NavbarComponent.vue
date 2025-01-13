@@ -4,33 +4,38 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { useDark } from '@vueuse/core';
 import { useCartStore } from '@/stores/cartStore';
 
-interface NavLink {
+export interface NavLink {
   name: string;
   path: string;
   icon: string[];
 }
+
 export default defineComponent({
   name: 'NavBar',
   components: {
     FontAwesomeIcon,
   },
-  data(): { navLinks: NavLink[] } {
+  data() {
     return {
       mobileMenuToggle: false,
       navLinks: [
         { name: 'Home', path: '/', icon: ['fas', 'house'] },
         { name: 'Products', path: '/products', icon: ['fas', 'store'] },
         { name: 'Contact', path: '/contact', icon: ['fas', 'envelope'] },
-      ],
+      ] as NavLink[],
+      isDark: useDark({ storageKey: 'vueuse-dark-mode' }),
     };
   },
   computed: {
     cartItemCount() {
       const cartStore = useCartStore();
       return cartStore.getCart.reduce((total, item) => total + item.quantity, 0);
-    }
+    },
   },
   methods: {
+    toggleDarkMode() {
+      this.isDark = !this.isDark;
+    },
     getLinkClass(to: string) {
       if (this.$route.path === to) {
         return this.isDark
@@ -41,20 +46,8 @@ export default defineComponent({
         ? 'text-white hover:text-gray-500'
         : 'text-black hover:text-gray-700';
     },
-    toggleDarkMode() {
-      this.isDark = !this.isDark;
-    },
   },
-  setup() {
-    const isDark = useDark({
-      storageKey: 'vueuse-dark-mode',
-      value: true,
-    });
 
-    return {
-      isDark,
-    };
-  },
 });
 </script>
 
@@ -101,7 +94,7 @@ export default defineComponent({
           </a>
           <a href="/cart" class="px-3 py-1 relative">
             <FontAwesomeIcon :icon="['fas', 'cart-shopping']" :class="isDark ? 'text-white' : 'text-black'" />
-            <span v-if="cartItemCount >= 0" 
+            <span v-if="cartItemCount > 0" 
               class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
               {{ cartItemCount }}
             </span>
@@ -150,7 +143,7 @@ export default defineComponent({
           </a>
           <a href="/cart">
             <FontAwesomeIcon :icon="['fas', 'cart-shopping']" :class="isDark ? 'text-white' : 'text-black'" />
-            <span v-if="cartItemCount >= 0" 
+            <span v-if="cartItemCount > 0" 
               class="absolute top-44 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
               {{ cartItemCount }}
             </span>
@@ -170,6 +163,7 @@ export default defineComponent({
 
 <style scoped>
 </style>
+
 
 
 

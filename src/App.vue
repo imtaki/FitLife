@@ -9,14 +9,9 @@ export default {
     NavBar,
     FooterComponent,
   },
-  setup() {
-    const isDark = useDark({
-      storageKey: 'vueuse-dark-mode',
-      value: true,
-    });
-
+  data() {
     return {
-      isDark,
+      isDark: useDark({ storageKey: 'vueuse-dark-mode' }),
     };
   },
 };

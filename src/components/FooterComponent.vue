@@ -2,36 +2,27 @@
 import { defineComponent } from 'vue';
 import { useDark } from '@vueuse/core';
 
-interface  FooterLink {
+export interface FooterLink {
   name: string;
   path: string;
 }
 export default defineComponent({
   name: 'FooterComponent',
-  data(): { footerLinks: FooterLink[] } {
+  data()  {
     return {
       footerLinks: [
         { name: 'About Us', path: '/aboutus' },
         { name: 'License', path: '/license' },
         { name: 'Contribute', path: '/contribute' },
         { name: 'Contact', path: '/contact' },
-      ],
+      ] as FooterLink[],
+      isDark: useDark({ storageKey: 'vueuse-dark-mode' }),
     };
   },
   computed: {
     currentYear(): number {
       return new Date().getFullYear();
     },
-  },
-  setup() {
-    const isDark = useDark({
-      storageKey: 'vueuse-dark-mode',
-      value: true,
-    });
-
-    return {
-      isDark,
-    };
   },
 });
 </script>

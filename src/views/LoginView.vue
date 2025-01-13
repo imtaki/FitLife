@@ -12,25 +12,18 @@ export default defineComponent({
   components: {
     FontAwesomeIcon,
   },
-  setup() {
-    const isDark = useDark({
-      storageKey: 'vueuse-dark-mode',
-      value: true, 
-    });
-
+  data() {
     return {
-      isDark,
-    };
-  },
-  data(): LoginForm {
-    return {
-      email: '',
-      password: '',
+      form: {
+        email: '',
+        password: ''
+      } as LoginForm,
+      isDark: useDark({ storageKey: 'vueuse-dark-mode' }),
     };
   },
   methods: {
     handleSubmit() {
-      console.log('Form submitted with:', { email: this.email, password: this.password });
+      console.log('Form submitted with:', { email: this.form.email, password: this.form.password });
     },
   },
 });
@@ -54,7 +47,7 @@ export default defineComponent({
           <label for="email" class="block text-sm/6 font-medium">Email address</label>
           <div class="mt-2">
             <input
-              v-model="email"
+              v-model="form.email"
               type="email"
               name="email"
               id="email"
@@ -72,7 +65,7 @@ export default defineComponent({
           </div>
           <div class="mt-2">
             <input
-              v-model="password"
+              v-model="form.password"
               type="password"
               name="password"
               id="password"

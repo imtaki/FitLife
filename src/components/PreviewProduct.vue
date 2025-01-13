@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue';
 import data from '@/products.json';
 import { useCartStore } from '@/stores/cartStore';
-
+import type { Product } from '@/types/product';
 export default defineComponent({
   name: 'PreviewProduct',
   props: {
@@ -65,7 +65,7 @@ export default defineComponent({
         <p class="text-lg mb-4">{{ product.longDescription }}</p>
         <p class="text-sm text-gray-500 mb-2">Category: {{ product.category }}</p>
         
-        <p class="text-xl font-semibold text-white mb-4">Price: € {{ product.price }}</p>
+        <p class="text-xl font-semibold mb-4">Price: € {{ product.price }}</p>
 
         <div v-if="product.flavors && product.flavors.length > 0" class="mb-4">
           <label for="flavor-selector" class="block font-semibold mb-2">Choose a Flavor:</label>
@@ -99,9 +99,9 @@ export default defineComponent({
           </table>
         </div>
         <div class="flex gap-5">
-        <button @click="decreaseQuantity" class="bg-white text-black px-4 py-2">-</button>
+        <button @click="decreaseQuantity" class=" px-4 py-2">-</button>
         <p class="border text-2xl border-zinc-700 px-4 py-2">{{ quantity }}</p>
-        <button @click="increaseQuantity" class="bg-white text-black px-4 py-2" >+</button>
+        <button @click="increaseQuantity" class=" px-4 py-2" >+</button>
         <button
           @click="addToCart(product)"
           class="bg-white text-black px-4 py-2 rounded-lg "

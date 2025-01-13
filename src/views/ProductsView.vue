@@ -17,7 +17,7 @@ export default defineComponent({
   components: {
     CardComponent,
   },
-  setup() {
+  data() {
     const products = data.products;
     const allItems: ProductItem[] = products.flatMap(category =>
       category.items.map(item => ({

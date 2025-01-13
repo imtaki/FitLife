@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useDark } from '@vueuse/core';
-import { useRoute } from 'vue-router';
 import data from '@/products.json';
 import CardComponent from '@/components/CardComponent.vue';
 interface CategoryItem {
@@ -16,10 +15,11 @@ export default defineComponent({
   components: {
     CardComponent
   },
-  setup() {
-    const isDark = useDark();
-    const route = useRoute();
-    const category = data.products.find(p => p.slug === route.params.slug);
+  data() {
+   const isDark = useDark({
+      storageKey: 'vueuse-dark-mode',
+    });
+    const category = data.products.find(p => p.slug === this.$route.params.slug);
     const items: CategoryItem[] = category ? category.items : [];
 
     return {
